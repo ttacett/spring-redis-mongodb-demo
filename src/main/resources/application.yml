@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: task_management
+  data:
+    mongodb:
+      uri: ${SPRING_DATA_MONGODB_URI}
+  redis:
+    host: ${SPRING_REDIS_HOST}
+    port: ${SPRING_REDIS_PORT}
+    timeout: 2000
+    connect-timeout: 2000
+    retry:
+      max-attempts: 5
+      initial-interval: 1000
+
+server:
+  port: 8080
+

@@ -2,15 +2,18 @@ package com.upm.task_management.service;
 
 import com.upm.task_management.entity.Task;
 import com.upm.task_management.repository.TaskRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class TaskService {
+
     private final TaskRepository taskRepository;
+
+    public TaskService(TaskRepository taskRepository) {
+        this.taskRepository = taskRepository;
+    }
 
     @Cacheable(value = "tasks", key = "#id")
     public Task getTask(String id) {
@@ -36,6 +39,3 @@ public class TaskService {
         taskRepository.deleteById(id);
     }
 }
-
-
-
