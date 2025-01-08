@@ -125,6 +125,7 @@ mvn spring-boot:run
 ### 5. Tester l'API avec Postman
 - **POST** : Créer une tâche
 - **GET** : Récupérer une tâche par son ID
+- **PUT** : Modifier une tâche par son ID
 - **DELETE** : Supprimer une tâche
 
 ### 6. Dockerisation (Optionnel)
